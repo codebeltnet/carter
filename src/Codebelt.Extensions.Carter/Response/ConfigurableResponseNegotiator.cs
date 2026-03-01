@@ -68,7 +68,7 @@ public abstract class ConfigurableResponseNegotiator<TOptions> : Configurable<TO
     public virtual Encoding GetEncoding(HttpRequest request)
     {
         var acceptCharset = request.GetTypedHeaders().AcceptCharset;
-        if (acceptCharset.Count > 0)
+        if (acceptCharset?.Count > 0)
         {
             var preferred = acceptCharset
                 .OrderByDescending(x => x.Quality ?? 1.0)
