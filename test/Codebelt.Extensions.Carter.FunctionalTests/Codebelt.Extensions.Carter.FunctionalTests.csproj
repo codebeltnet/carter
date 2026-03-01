@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Codebelt.Extensions.Carter</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Carter" />
+    <PackageReference Include="Codebelt.Extensions.AspNetCore.Text.Yaml" />
+    <PackageReference Include="Cuemon.Core" />
+    <PackageReference Include="Cuemon.Extensions.AspNetCore.Text.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json\Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.csproj" />
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Text.Json\Codebelt.Extensions.Carter.AspNetCore.Text.Json.csproj" />
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Text.Yaml\Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.csproj" />
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Xml\Codebelt.Extensions.Carter.AspNetCore.Xml.csproj" />
+  </ItemGroup>
+
+</Project>

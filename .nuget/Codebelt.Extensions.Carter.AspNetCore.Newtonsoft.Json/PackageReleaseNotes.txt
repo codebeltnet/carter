@@ -1,0 +1,6 @@
+Version: 1.0.0
+Availability: .NET 10
+ 
+# New Features
+- ADDED NewtonsoftJsonNegotiator class in the Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json namespace that provides a JSON response negotiator for Carter, capable of serializing response models to JSON format using Newtonsoft.Json
+ 

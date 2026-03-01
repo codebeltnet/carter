@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>The Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json namespace contains types that complements the Codebelt.Extensions.Carter namespace by providing an opinionated JSON response negotiator for Carter using Newtonsoft.Json in the context of ASP.NET Core. This is a Codebelt ecosystem alternative to Carter's built-in Newtonsoft.Json negotiator.</Description>
+    <PackageTags>extension-methods extensions carter response-negotiation json newtonsoft-json asp-net-core minimal-api codebelt</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Codebelt.Extensions.AspNetCore.Newtonsoft.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Codebelt.Extensions.Carter\Codebelt.Extensions.Carter.csproj" />
+  </ItemGroup>
+</Project>

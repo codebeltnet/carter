@@ -1,0 +1,7 @@
+Version: 1.0.0
+Availability: .NET 10
+ 
+# New Features
+- ADDED ConfigurableResponseNegotiator<TOptions> class in the Codebelt.Extensions.Carter.Response namespace that provides an abstract, configurable base class for Carter response negotiators that serialize models using a StreamFormatter<TOptions> implementation
+- ADDED EndpointConventionBuilderExtensions class in the Codebelt.Extensions.Carter namespace that consist of extension methods for the IEndpointConventionBuilder interface: Produces<TResponse> and Produces
+ 

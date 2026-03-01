@@ -1,0 +1,6 @@
+Version: 1.0.0
+Availability: .NET 10
+ 
+# New Features
+- ADDED YamlResponseNegotiator class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using YamlDotNet
+ 

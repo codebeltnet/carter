@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>The Codebelt.Extensions.Carter.AspNetCore.Xml namespace contains types that complements the Codebelt.Extensions.Carter namespace by providing an XML response negotiator for Carter using System.Xml in the context of ASP.NET Core.</Description>
+    <PackageTags>extension-methods extensions carter response-negotiation xml system-xml asp-net-core minimal-api</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cuemon.Extensions.AspNetCore.Xml" />
+    <PackageReference Include="Cuemon.Extensions.IO" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Codebelt.Extensions.Carter\Codebelt.Extensions.Carter.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Codebelt.Extensions.Carter.AspNetCore.Text.Json</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Carter" />
+    <PackageReference Include="Cuemon.Extensions.AspNetCore.Text.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Text.Json\Codebelt.Extensions.Carter.AspNetCore.Text.Json.csproj" />
+  </ItemGroup>
+
+</Project>

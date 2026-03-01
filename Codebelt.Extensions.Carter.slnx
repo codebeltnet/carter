@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json/Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.csproj" Id="622ef508-544e-4b25-bdf5-97b3a44df774" />
+    <Project Path="src/Codebelt.Extensions.Carter.AspNetCore.Text.Json/Codebelt.Extensions.Carter.AspNetCore.Text.Json.csproj" Id="1af45f4c-8132-4e69-92c9-1180d924a2d8" />
+    <Project Path="src/Codebelt.Extensions.Carter.AspNetCore.Text.Yaml/Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.csproj" Id="ce23cc30-f87e-4b06-97d3-b9ac9b843112" />
+    <Project Path="src/Codebelt.Extensions.Carter.AspNetCore.Xml/Codebelt.Extensions.Carter.AspNetCore.Xml.csproj" Id="f732b05c-974d-4c44-9720-1e858cc62b04" />
+    <Project Path="src/Codebelt.Extensions.Carter/Codebelt.Extensions.Carter.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.Tests/Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.Tests.csproj" Id="5893a811-f4f0-4e4d-a31b-a5f54565c671" />
+    <Project Path="test/Codebelt.Extensions.Carter.AspNetCore.Text.Json.Tests/Codebelt.Extensions.Carter.AspNetCore.Text.Json.Tests.csproj" Id="ee303e3a-8a55-4645-9ddf-8aba678aa5ca" />
+    <Project Path="test/Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.Tests/Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.Tests.csproj" Id="de5f0cf1-7256-480d-b126-c7908ec88c4a" />
+    <Project Path="test/Codebelt.Extensions.Carter.AspNetCore.Xml.Tests/Codebelt.Extensions.Carter.AspNetCore.Xml.Tests.csproj" Id="08e8eb2f-772c-4f20-a7f0-f60fa6769a5e" />
+    <Project Path="test/Codebelt.Extensions.Carter.FunctionalTests/Codebelt.Extensions.Carter.FunctionalTests.csproj" Id="e16dc8ae-68a5-4409-8a80-1837f805b891" />
+    <Project Path="test/Codebelt.Extensions.Carter.Tests/Codebelt.Extensions.Carter.Tests.csproj" />
+  </Folder>
+</Solution>

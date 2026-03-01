@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Carter" />
+    <PackageReference Include="Codebelt.Extensions.AspNetCore.Newtonsoft.Json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json\Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Codebelt.Extensions.Carter.AspNetCore.Text.Yaml</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Carter" />
+    <PackageReference Include="Codebelt.Extensions.AspNetCore.Text.Yaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Text.Yaml\Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.csproj" />
+  </ItemGroup>
+
+</Project>

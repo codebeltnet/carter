@@ -1,0 +1,6 @@
+Version: 1.0.0
+Availability: .NET 10
+ 
+# New Features
+- ADDED XmlResponseNegotiator class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using System.Xml.XmlWriter
+ 
