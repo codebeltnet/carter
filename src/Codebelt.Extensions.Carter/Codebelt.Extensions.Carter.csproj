@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>The Codebelt.Extensions.Carter namespace contains types and extension methods that complements the Carter namespace by providing configurable response negotiation, endpoint convention builder extensions and content negotiation for ASP.NET Core minimal APIs.</Description>
+    <PackageTags>extension-methods extensions carter response-negotiation content-negotiation asp-net-core minimal-api</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Carter" />
+    <PackageReference Include="Cuemon.Core" />
+  </ItemGroup>
+
+</Project>
