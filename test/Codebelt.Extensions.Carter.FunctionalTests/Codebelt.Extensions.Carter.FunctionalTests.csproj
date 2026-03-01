@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>Codebelt.Extensions.Carter.AspNetCore.Text.Json</RootNamespace>
+    <RootNamespace>Codebelt.Extensions.Carter</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

@@ -7,10 +7,10 @@ using Carter;
 using Carter.Response;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
+using Cuemon.Extensions.AspNetCore.Xml;
 using Cuemon.Xml.Serialization.Formatters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Xunit;
 using AspNetCoreMediaType = Microsoft.Net.Http.Headers.MediaTypeHeaderValue;
@@ -61,7 +61,7 @@ public class XmlResponseNegotiatorTest : Test
         using var response = await MinimalWebHostTestFactory.RunAsync(
             services =>
             {
-                services.Configure<XmlFormatterOptions>(_ => { });
+                services.AddMinimalXmlOptions();
                 services.AddCarter(configurator: c => c.WithResponseNegotiator<XmlResponseNegotiator>());
             },
             app =>

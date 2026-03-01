@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Carter;
 using Codebelt.Extensions.AspNetCore.Newtonsoft.Json.Formatters;
 using Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json;
-using Codebelt.Extensions.Carter.AspNetCore.Text.Json.Assets;
+using Codebelt.Extensions.Carter.Assets;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
 using Microsoft.AspNetCore.Builder;
@@ -13,7 +13,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Xunit;
 
-namespace Codebelt.Extensions.Carter.AspNetCore.Text.Json;
+namespace Codebelt.Extensions.Carter;
 
 /// <summary>
 /// Functional tests verifying Carter bootstrapped with <see cref="NewtonsoftJsonNegotiator"/> as the sole response negotiator.

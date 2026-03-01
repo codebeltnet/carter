@@ -2,16 +2,16 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Carter;
-using Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters;
-using Codebelt.Extensions.Carter.AspNetCore.Text.Json.Assets;
+using Codebelt.Extensions.AspNetCore.Text.Yaml;
 using Codebelt.Extensions.Carter.AspNetCore.Text.Yaml;
+using Codebelt.Extensions.Carter.Assets;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Codebelt.Extensions.Carter.AspNetCore.Text.Json;
+namespace Codebelt.Extensions.Carter;
 
 /// <summary>
 /// Functional tests verifying Carter bootstrapped with <see cref="YamlResponseNegotiator"/> as the sole response negotiator.
@@ -28,7 +28,7 @@ public class YamlResponseNegotiatorTest : Test
         using var response = await MinimalWebHostTestFactory.RunAsync(
             services =>
             {
-                services.AddYamlFormatterOptions();
+                services.AddMinimalYamlOptions();
                 services.AddCarter(configurator: c => c
                     .WithModule<WorldModule>()
                     .WithResponseNegotiator<YamlResponseNegotiator>());

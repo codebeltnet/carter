@@ -2,8 +2,8 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using Carter;
-using Codebelt.Extensions.Carter.AspNetCore.Text.Json.Assets;
 using Codebelt.Extensions.Carter.AspNetCore.Xml;
+using Codebelt.Extensions.Carter.Assets;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
 using Cuemon.Extensions.AspNetCore.Xml;
@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Codebelt.Extensions.Carter.AspNetCore.Text.Json;
+namespace Codebelt.Extensions.Carter;
 
 /// <summary>
 /// Functional tests verifying Carter bootstrapped with <see cref="XmlResponseNegotiator"/> as the sole response negotiator.

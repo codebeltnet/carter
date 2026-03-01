@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Carter;
 using Carter.Response;
-using Codebelt.Extensions.AspNetCore.Text.Yaml.Formatters;
+using Codebelt.Extensions.AspNetCore.Text.Yaml;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
 using Codebelt.Extensions.YamlDotNet.Formatters;
@@ -63,7 +63,7 @@ public class YamlResponseNegotiatorTest : Test
         using var response = await MinimalWebHostTestFactory.RunAsync(
             services =>
             {
-                services.AddYamlFormatterOptions();
+                services.AddMinimalYamlOptions();
                 services.AddCarter(configurator: c => c.WithResponseNegotiator<YamlResponseNegotiator>());
             },
             app =>

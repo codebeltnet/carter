@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
-namespace Codebelt.Extensions.Carter.AspNetCore.Text.Json.Assets;
+namespace Codebelt.Extensions.Carter.Assets;
 
 internal sealed class WorldModule : ICarterModule
 {

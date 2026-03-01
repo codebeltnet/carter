@@ -3,7 +3,8 @@ using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Carter;
-using Codebelt.Extensions.Carter.AspNetCore.Text.Json.Assets;
+using Codebelt.Extensions.Carter.AspNetCore.Text.Json;
+using Codebelt.Extensions.Carter.Assets;
 using Codebelt.Extensions.Xunit;
 using Codebelt.Extensions.Xunit.Hosting.AspNetCore;
 using Cuemon.Extensions.AspNetCore.Text.Json;
@@ -11,7 +12,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace Codebelt.Extensions.Carter.AspNetCore.Text.Json;
+namespace Codebelt.Extensions.Carter;
 
 /// <summary>
 /// Functional tests verifying Carter bootstrapped with <see cref="JsonResponseNegotiator"/> as the sole response negotiator.
