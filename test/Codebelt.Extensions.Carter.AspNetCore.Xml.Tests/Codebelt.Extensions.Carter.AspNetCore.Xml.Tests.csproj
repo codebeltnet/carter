@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Codebelt.Extensions.Carter.AspNetCore.Xml</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Carter" />
+    <PackageReference Include="Cuemon.Extensions.AspNetCore.Xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Codebelt.Extensions.Carter.AspNetCore.Xml\Codebelt.Extensions.Carter.AspNetCore.Xml.csproj" />
+  </ItemGroup>
+
+</Project>
