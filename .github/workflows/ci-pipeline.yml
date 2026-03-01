@@ -83,7 +83,7 @@ jobs:
     uses: codebeltnet/jobs-sonarcloud/.github/workflows/default.yml@v3
     with:
       organization: geekle
-      projectKey: carter
+      projectKey: ccodebelt-carter
       version: ${{ needs.build.outputs.version }}
     secrets: inherit
 
