@@ -113,7 +113,7 @@ public abstract class ConfigurableResponseNegotiator<TOptions> : Configurable<TO
     {
         var encoding = GetEncoding(req);
         res.ContentType = ContentType + "; charset=" + encoding.WebName;
-        await using var textWriter = new StreamWriter(res.Body, encoding);
+        await using var textWriter = new StreamWriter(res.Body, encoding, bufferSize: -1, leaveOpen: true);
         var formatter = GetFormatter();
         using (var streamReader = new StreamReader(formatter.Serialize(model), encoding))
         {
