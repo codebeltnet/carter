@@ -1,6 +1,11 @@
+Version: 1.0.1
+Availability: .NET 10
+
+# ALM
+- CHANGED Dependencies have been upgraded to the latest compatible versions for all supported target frameworks (TFMs)
+
 Version: 1.0.0
 Availability: .NET 10
- 
+
 # New Features
 - ADDED YamlResponseNegotiator class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using YamlDotNet
- 
