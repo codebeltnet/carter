@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.0.1] - 2026-03-25
+
+This is a service update that focuses on package dependencies.
+
 ## [1.0.0] - 2026-03-01
 
 This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json`, `Codebelt.Extensions.Carter.AspNetCore.Text.Json`, `Codebelt.Extensions.Carter.AspNetCore.Text.Yaml` and `Codebelt.Extensions.Carter.AspNetCore.Xml` packages.
