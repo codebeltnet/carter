@@ -6,7 +6,7 @@
 
 An open-source project (MIT license) that targets and complements the [Carter](https://github.com/dotnet/Carter) API library. It provides a uniform and convenient way of doing API development for all project types in .NET.
 
-Your versatile Carter companion for modern development with `.NET 9` and `.NET 10`.
+Your versatile Carter companion for modern development with `.NET 10`.
 
 It is, by heart, free, flexible and built to extend and boost your agile codebelt.
 
