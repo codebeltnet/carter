@@ -33,13 +33,13 @@ SOURCE_PACKAGE_MAP: Dict[str, List[str]] = {
     "bootstrapper": ["Codebelt.Bootstrapper"],
     "newtonsoft-json": [
         "Codebelt.Extensions.Newtonsoft.Json",
-        "Codebelt.Extensions.AspNetCore.Mvc.Formatters.Newtonsoft",
+        "Codebelt.Extensions.AspNetCore.Newtonsoft.Json",
     ],
     "aws-signature-v4": ["Codebelt.Extensions.AspNetCore.Authentication.AwsSignature"],
     "unitify": ["Codebelt.Unitify"],
     "yamldotnet": [
         "Codebelt.Extensions.YamlDotNet",
-        "Codebelt.Extensions.AspNetCore.Mvc.Formatters.Text.Yaml",
+        "Codebelt.Extensions.AspNetCore.Text.Yaml",
     ],
     "globalization": ["Codebelt.Extensions.Globalization"],
     "asp-versioning": ["Codebelt.Extensions.Asp.Versioning"],
