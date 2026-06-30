@@ -4,9 +4,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
-## [1.0.5] - 2026-06-30
+## [1.0.5] - 2026-07-01
 
-This is a service update that focuses on package dependencies.
+This is a patch service update that refreshes shared package baselines, hardens the DocFX publishing pipeline with new per-type usage examples, and tightens CI deployment gating so skipped optional jobs no longer suppress package publishing.
+
+### Added
+
+- Per-type DocFX overwrite pages with usage examples for `NewtonsoftJsonNegotiator`, `JsonResponseNegotiator`, `YamlResponseNegotiator`, `XmlResponseNegotiator`, and `EndpointConventionBuilderExtensions`,
+- `Codebelt.Extensions.Carter.Response` namespace overview page that consolidates guidance on the `ConfigurableResponseNegotiator<TOptions>` base class.
+
+### Changed
+
+- `Codebelt.Extensions.AspNetCore.Newtonsoft.Json` upgraded to 10.1.5,
+- `Codebelt.Extensions.AspNetCore.Text.Yaml` upgraded to 10.1.5,
+- `Codebelt.Extensions.Xunit.App` upgraded to 11.1.1,
+- `Cuemon.Core` upgraded to 10.5.4,
+- `Cuemon.Extensions.AspNetCore.Text.Json` upgraded to 10.5.4,
+- `Cuemon.Extensions.AspNetCore.Xml` upgraded to 10.5.4,
+- `Cuemon.Extensions.IO` upgraded to 10.5.4,
+- `Microsoft.NET.Test.Sdk` upgraded to 18.7.0,
+- Hardened the DocFX publishing config so namespace and type overwrite inputs are kept in separate subdirectories and excluded from conceptual content,
+- Refreshed the DocFX site container's NGINX base image to 1.31.2-alpine,
+- Codified the repository's DocFX authoring requirements, verification gates, and temp-artifact handling in `AGENTS.md`,
+- Guarded the deploy job so skipped optional jobs (such as disabled macOS matrix runs) no longer suppress package publishing when the required build, test, and quality gates succeed.
 
 ## [1.0.4] - 2026-06-06
 
@@ -49,6 +69,10 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
-[Unreleased]: https://github.com/codebeltnet/carter/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/codebeltnet/carter/compare/v1.0.5...HEAD
+[1.0.5]: https://github.com/codebeltnet/carter/compare/v1.0.4...v1.0.5
+[1.0.4]: https://github.com/codebeltnet/carter/compare/v1.0.3...v1.0.4
+[1.0.3]: https://github.com/codebeltnet/carter/compare/v1.0.2...v1.0.3
+[1.0.2]: https://github.com/codebeltnet/carter/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/codebeltnet/carter/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/codebeltnet/carter/releases/tag/v1.0.0
