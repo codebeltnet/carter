@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.0.6] - 2026-07-22
+
+This is a service update that focuses on package dependencies.
+
 ## [1.0.5] - 2026-07-01
 
 This is a patch service update that refreshes shared package baselines, hardens the DocFX publishing pipeline with new per-type usage examples, and tightens CI deployment gating so skipped optional jobs no longer suppress package publishing.
