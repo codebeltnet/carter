@@ -4,6 +4,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.0.6] - 2026-07-24
+
+This is a patch release that updates Cuemon and Codebelt shared dependencies to their latest stable versions, improves build configuration, enhances CI/CD automation, and modernizes code formatting.
+
+### Changed
+
+- Codebelt.Extensions.AspNetCore.Newtonsoft.Json upgraded to 10.1.6,
+- Codebelt.Extensions.AspNetCore.Text.Yaml upgraded to 10.1.6,
+- Codebelt.Extensions.Xunit.App upgraded to 11.1.2,
+- Cuemon.Core upgraded to 10.5.5,
+- Cuemon.Extensions.AspNetCore.Text.Json upgraded to 10.5.5,
+- Cuemon.Extensions.AspNetCore.Xml upgraded to 10.5.5,
+- Cuemon.Extensions.IO upgraded to 10.5.5,
+- Microsoft.NET.Test.Sdk upgraded to 18.8.1,
+- Enhanced the NuGet package bumping script with intelligent version management, NuGet API lookups with caching, and improved output messaging,
+- Refreshed the DocFX site container's NGINX base image to 1.31-alpine to allow more flexibility in the specific NGINX release,
+- Modernized XmlResponseNegotiator code formatting by adopting file-scoped namespace syntax.
+
+### Fixed
+
+- Corrected the AnalysisMode property name in Directory.Build.props to use the correct MSBuild property.
+
 ## [1.0.5] - 2026-07-01
 
 This is a patch service update that refreshes shared package baselines, hardens the DocFX publishing pipeline with new per-type usage examples, and tightens CI deployment gating so skipped optional jobs no longer suppress package publishing.
@@ -69,7 +91,7 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
-[Unreleased]: https://github.com/codebeltnet/carter/compare/v1.0.5...HEAD
+[1.0.6]: https://github.com/codebeltnet/carter/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/codebeltnet/carter/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/codebeltnet/carter/compare/v1.0.3...v1.0.4
 [1.0.3]: https://github.com/codebeltnet/carter/compare/v1.0.2...v1.0.3
