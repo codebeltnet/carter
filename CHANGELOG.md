@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.0.7] - 2026-08-16
+
+This is a service update that focuses on package dependencies.
+
 ## [1.0.6] - 2026-07-24
 
 This is a patch release that updates Cuemon and Codebelt shared dependencies to their latest stable versions, improves build configuration, enhances CI/CD automation, and modernizes code formatting.
