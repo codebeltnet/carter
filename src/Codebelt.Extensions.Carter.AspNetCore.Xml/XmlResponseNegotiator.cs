@@ -10,7 +10,7 @@ namespace Codebelt.Extensions.Carter.AspNetCore.Xml;
 /// Provides an XML response negotiator for Carter, capable of serializing response models to XML format.
 /// </summary>
 /// <seealso cref="ConfigurableResponseNegotiator{TOptions}"/>
-    public class XmlResponseNegotiator : ConfigurableResponseNegotiator<XmlFormatterOptions>
+public class XmlResponseNegotiator : ConfigurableResponseNegotiator<XmlFormatterOptions>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="XmlResponseNegotiator"/> class.
