@@ -6,7 +6,19 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 
 ## [1.0.7] - 2026-08-16
 
-This is a service update that focuses on package dependencies.
+This is a patch release focused on updating package dependencies to their latest compatible versions and refreshing repository configuration and test environment setup.
+
+### Changed
+
+- Codebelt.Extensions.Xunit.App upgraded to 11.2.1,
+- Codebelt.Extensions.AspNetCore.Newtonsoft.Json upgraded to 10.1.7,
+- Cuemon.Core upgraded to 10.7.0,
+- Cuemon.Extensions.AspNetCore.Text.Json upgraded to 10.7.0,
+- Cuemon.Extensions.AspNetCore.Xml upgraded to 10.7.0,
+- Cuemon.Extensions.IO upgraded to 10.7.0,
+- Microsoft.NET.Test.Sdk upgraded to 18.9.0,
+- Repository configuration updated: removed obsolete diagnostic rule suppressions from .editorconfig and added standard .gitattributes for line-ending normalization and merge handling,
+- Docker test environment image updated to support multi-version testing across .NET 8, 9, 10, and 11.
 
 ## [1.0.6] - 2026-07-24
 
@@ -95,6 +107,7 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
+[1.0.7]: https://github.com/codebeltnet/carter/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/codebeltnet/carter/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/codebeltnet/carter/compare/v1.0.4...v1.0.5
 [1.0.4]: https://github.com/codebeltnet/carter/compare/v1.0.3...v1.0.4
