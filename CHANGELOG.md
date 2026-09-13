@@ -4,6 +4,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.0.8] - 2026-09-13
+
+This is a patch release focused on modernizing test infrastructure, migrating code coverage tooling to the Microsoft Testing Platform ecosystem, and updating shared Codebelt dependencies to their latest stable versions.
+
+### Changed
+
+- Codebelt.Extensions.AspNetCore.Newtonsoft.Json upgraded to 10.1.8,
+- Codebelt.Extensions.AspNetCore.Text.Yaml upgraded to 10.1.8,
+- Codebelt.Extensions.Xunit.App upgraded to 12.0.1,
+- Cuemon.Core upgraded to 10.7.1,
+- Cuemon.Extensions.AspNetCore.Text.Json upgraded to 10.7.1,
+- Cuemon.Extensions.AspNetCore.Xml upgraded to 10.7.1,
+- Cuemon.Extensions.IO upgraded to 10.7.1,
+- Microsoft.NET.Test.Sdk upgraded to 18.10.0,
+- MinVer upgraded to 8.0.0,
+- xunit.v3 upgraded to 4.0.0,
+- xunit.v3.runner.console upgraded to 4.0.0,
+- xunit.runner.visualstudio upgraded to 4.0.0,
+- Code coverage tooling migrated from Coverlet (coverlet.msbuild and coverlet.collector) to Microsoft.Testing.Extensions.CodeCoverage for improved test platform integration,
+- Test runner configuration added to global.json to use Microsoft.Testing.Platform as the test orchestration platform,
+- Contributing guidelines significantly expanded to document Codebelt .NET library estate standards, repository structure, build and test processes, and development expectations.
+
+### Removed
+
+- Removed `coverlet.collector` and `coverlet.msbuild` from test project dependencies.
+
 ## [1.0.7] - 2026-08-16
 
 This is a patch release focused on updating package dependencies to their latest compatible versions and refreshing repository configuration and test environment setup.
@@ -107,6 +133,7 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
+[1.0.8]: https://github.com/codebeltnet/carter/compare/v1.0.7...v1.0.8
 [1.0.7]: https://github.com/codebeltnet/carter/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/codebeltnet/carter/compare/v1.0.5...v1.0.6
 [1.0.5]: https://github.com/codebeltnet/carter/compare/v1.0.4...v1.0.5
