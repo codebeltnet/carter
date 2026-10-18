@@ -4,6 +4,35 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.0.9] - 2026-10-17
+
+This is a patch release updating dependencies, documentation hosting, and repository agent guidance.
+
+### Added
+
+- Added "Codebelt.Coverlet.MTP" 10.1.0 for MTP coverage and "Microsoft.Testing.Extensions.HangDump" 2.5.1 for hang diagnostics,
+- Added an nginx configuration serving documentation on port 8080, caching fingerprinted assets, and disabling caching for stable URLs.
+
+### Changed
+
+- Updated "Codebelt.Extensions.AspNetCore.Newtonsoft.Json" from 10.1.8 to 10.1.9,
+- Updated "Codebelt.Extensions.AspNetCore.Text.Yaml" from 10.1.8 to 10.1.9,
+- Updated "Codebelt.Extensions.Xunit.App" from 12.0.1 to 12.0.2,
+- Updated "Cuemon.Core" from 10.7.1 to 10.8.1,
+- Updated "Cuemon.Extensions.AspNetCore.Text.Json" from 10.7.1 to 10.8.1,
+- Updated "Cuemon.Extensions.AspNetCore.Xml" from 10.7.1 to 10.8.1,
+- Updated "Cuemon.Extensions.IO" from 10.7.1 to 10.8.1,
+- Updated "Microsoft.NET.Test.Sdk" from 18.10.0 to 18.11.0,
+- Updated "xunit.v3" from 4.0.1 to 4.0.2,
+- Updated "xunit.v3.runner.console" from 4.0.1 to 4.0.2,
+- Updated "xunit.runner.visualstudio" from 4.0.0 to 4.0.1,
+- Updated the DocFX container to use dhi.io/nginx and codebeltnet/docfx:2, with separate API member pages, the ms-style template, and a repository-specific sitemap,
+- Consolidated the full test, benchmark, and XML documentation guidance from .github/copilot-instructions.md into AGENTS.md with explicit path scopes, and updated guidance references.
+
+### Removed
+
+- Removed the direct "Microsoft.Testing.Extensions.CodeCoverage" test dependency in favor of "Codebelt.Coverlet.MTP".
+
 ## [1.0.8] - 2026-09-13
 
 This is a patch release focused on modernizing test infrastructure, migrating code coverage tooling to the Microsoft Testing Platform ecosystem, and updating shared Codebelt dependencies to their latest stable versions.
@@ -133,6 +162,7 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
+[1.0.9]: https://github.com/codebeltnet/carter/compare/v1.0.8...v1.0.9
 [1.0.8]: https://github.com/codebeltnet/carter/compare/v1.0.7...v1.0.8
 [1.0.7]: https://github.com/codebeltnet/carter/compare/v1.0.6...v1.0.7
 [1.0.6]: https://github.com/codebeltnet/carter/compare/v1.0.5...v1.0.6
