@@ -2,6 +2,8 @@
 
 A Newtonsoft.Json-powered response negotiator for Carter in ASP.NET Core minimal APIs.
 
+Target frameworks: .NET 10 (`net10.0`) and .NET 11 (`net11.0`).
+
 ## About
 
 **Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json** extends the **Codebelt.Extensions.Carter** package with a dedicated JSON response negotiator for Carter, capable of serializing response models to JSON format using Newtonsoft.Json.

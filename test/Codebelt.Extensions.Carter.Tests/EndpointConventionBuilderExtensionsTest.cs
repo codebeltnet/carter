@@ -67,7 +67,7 @@ namespace Codebelt.Extensions.Carter
         public void Produces_WithStatusCode_ShouldAddProducesResponseTypeMetadata()
         {
             var delegateEndpointBuilder = new FakeEndpointConventionBuilder();
-            
+
             delegateEndpointBuilder.Produces(StatusCodes.Status404NotFound);
 
             var endpointBuilder = new RouteEndpointBuilder(context => System.Threading.Tasks.Task.CompletedTask, RoutePatternFactory.Parse("/"), 0);
@@ -84,7 +84,7 @@ namespace Codebelt.Extensions.Carter
             // ContentTypes might be empty
             Assert.Empty(typeMetadata.ContentTypes);
         }
-        
+
         private class FakeEndpointConventionBuilder : IEndpointConventionBuilder
         {
             public List<Action<EndpointBuilder>> Conventions { get; } = [];
