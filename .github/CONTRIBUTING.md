@@ -35,7 +35,7 @@ Run tests one project at a time so a failing or hanging project is attributable.
 ```powershell
 $testProjects = Get-ChildItem test -Filter *.csproj -Recurse
 foreach ($project in $testProjects) {
-    dotnet test --project $project.FullName --configuration Release --no-build
+    dotnet test --project $project.FullName --configuration Release --no-build --no-restore
     if ($LASTEXITCODE -ne 0) { throw "Tests failed: $($project.FullName)" }
 }
 ```
@@ -47,7 +47,8 @@ NuGet publishing requires successful builds, packaging, the test quality gate, S
 ## Integration and infrastructure
 
 - `WSL-Ubuntu` — WSL distribution `Ubuntu-24.04`.
-- `Docker-Ubuntu` — Docker image `codebeltnet/ubuntu-testrunner:8-9-10-11`.
+- `Docker-Ubuntu (net10.0)` — Docker image `codebeltnet/ubuntu-testrunner:10`.
+- `Docker-Ubuntu (net11.0)` — Docker image `codebeltnet/ubuntu-testrunner:11`.
 
 This repository has no repository-local `docker-compose.yml` service dependency in the current checkout.
 Use the environments declared in `testenvironments.json` when you need the estate test runner.
