@@ -4,6 +4,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.1.0] - 2026-11-10
+
+This is a minor release that adds .NET 11 as a supported target framework alongside .NET 10 for all packages, with matching build, CI, and documentation updates. Source and test changes are formatting only, and the release also upgrades the Codebelt.Coverlet.MTP test coverage tooling.
+
+### Changed
+
+- Added .NET 11 (`net11.0`) as a target framework alongside .NET 10 for the Codebelt.Extensions.Carter packages, with shared build properties also targeting `net11.0` for the source, test, and benchmark projects,
+- Updated "Codebelt.Coverlet.MTP" from 10.1.0 to 10.1.1,
+- Documented .NET 11 support in the repository README, AGENTS guidance, contributing guide, availability include, and package READMEs,
+- Moved CI runners to Ubuntu 26.04 and enabled preview SDKs so .NET 11 can be built and tested before its final release.
+
 ## [1.0.9] - 2026-10-17
 
 This is a patch release updating dependencies, documentation hosting, and repository agent guidance.
@@ -162,6 +173,7 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
+[1.1.0]: https://github.com/codebeltnet/carter/compare/v1.0.9...v1.1.0
 [1.0.9]: https://github.com/codebeltnet/carter/compare/v1.0.8...v1.0.9
 [1.0.8]: https://github.com/codebeltnet/carter/compare/v1.0.7...v1.0.8
 [1.0.7]: https://github.com/codebeltnet/carter/compare/v1.0.6...v1.0.7

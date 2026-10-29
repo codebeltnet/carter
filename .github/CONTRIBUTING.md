@@ -5,7 +5,7 @@ This repository is part of the Codebelt .NET library estate. The instructions be
 ## Before you start
 
 - Read the repository `README.md` and open an issue before starting a non-trivial feature or behavioral change.
-- Use an installed .NET SDK that can build the target frameworks listed below. This repository currently targets: **net10.0**.
+- Install the .NET 10 and .NET 11 SDKs to build **net10.0** and **net11.0** and run all tests. This supplies the required .NET and ASP.NET Core runtimes for both targets.
 - The solution is `Codebelt.Extensions.Carter.slnx`. Central package versions are maintained in `Directory.Packages.props`.
 - The shared build behavior is in `Directory.Build.props` and `Directory.Build.targets`; repository-specific TFMs, package references and metadata remain local to this library.
 
@@ -35,16 +35,20 @@ Run tests one project at a time so a failing or hanging project is attributable.
 ```powershell
 $testProjects = Get-ChildItem test -Filter *.csproj -Recurse
 foreach ($project in $testProjects) {
-    dotnet test $project.FullName --configuration Release --no-restore
+    dotnet test --project $project.FullName --configuration Release --no-build --no-restore
+    if ($LASTEXITCODE -ne 0) { throw "Tests failed: $($project.FullName)" }
 }
 ```
 
-The CI test plan currently runs **6** project(s) and excludes **0** project(s). The workflow also has an optional macOS test job.
+The CI test plan runs all **6** test projects on both **net10.0** and **net11.0**, in Debug and Release on Linux and Windows for x64 and ARM64. The workflow also has an optional macOS test job. SDK installation includes preview releases so .NET 11 can be tested before its final release.
+
+NuGet publishing requires successful builds, packaging, the test quality gate, SonarCloud, Codecov, and CodeQL.
 
 ## Integration and infrastructure
 
 - `WSL-Ubuntu` — WSL distribution `Ubuntu-24.04`.
-- `Docker-Ubuntu` — Docker image `codebeltnet/ubuntu-testrunner:8-9-10-11`.
+- `Docker-Ubuntu (net10.0)` — Docker image `codebeltnet/ubuntu-testrunner:10`.
+- `Docker-Ubuntu (net11.0)` — Docker image `codebeltnet/ubuntu-testrunner:11`.
 
 This repository has no repository-local `docker-compose.yml` service dependency in the current checkout.
 Use the environments declared in `testenvironments.json` when you need the estate test runner.
