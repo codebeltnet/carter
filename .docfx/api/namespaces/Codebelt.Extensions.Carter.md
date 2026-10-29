@@ -1,4 +1,4 @@
-﻿---
+---
 uid: Codebelt.Extensions.Carter
 summary: *content
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 uid: Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.NewtonsoftJsonNegotiator
 summary: *content
 ---
