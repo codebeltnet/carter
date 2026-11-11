@@ -6,14 +6,21 @@ For more details, please refer to `PackageReleaseNotes.txt` on a per assembly ba
 
 ## [1.1.0] - 2026-11-10
 
-This is a minor release that adds .NET 11 as a supported target framework alongside .NET 10 for all packages, with matching build, CI, and documentation updates. Source and test changes are formatting only, and the release also upgrades the Codebelt.Coverlet.MTP test coverage tooling.
+This minor release adds .NET 11 support alongside .NET 10, updates dependencies, and refreshes test and documentation infrastructure.
+
+### Added
+
+- .NET 11 targets for the Codebelt.Extensions.Carter packages,
+- `SonarAnalyzer.CSharp` 10.35.0.4138 for non-test projects.
 
 ### Changed
 
-- Added .NET 11 (`net11.0`) as a target framework alongside .NET 10 for the Codebelt.Extensions.Carter packages, with shared build properties also targeting `net11.0` for the source, test, and benchmark projects,
-- Updated "Codebelt.Coverlet.MTP" from 10.1.0 to 10.1.1,
-- Documented .NET 11 support in the repository README, AGENTS guidance, contributing guide, availability include, and package READMEs,
-- Moved CI runners to Ubuntu 26.04 and enabled preview SDKs so .NET 11 can be built and tested before its final release.
+- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1 and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.2,
+- Updated `Cuemon.Core`, `Cuemon.Extensions.AspNetCore.Text.Json`, `Cuemon.Extensions.AspNetCore.Xml`, and `Cuemon.Extensions.IO` from 10.8.1 to 10.8.2,
+- Moved Linux CI to Ubuntu 26.04, enabled preview SDKs, and split Docker test runners by .NET 10 and .NET 11,
+- Updated package and contributor guidance for the supported frameworks and test environments,
+- Service-update automation retains planned releases and validates release dates,
+- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges.
 
 ## [1.0.9] - 2026-10-17
 
