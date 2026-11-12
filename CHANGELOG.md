@@ -4,23 +4,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
-## [1.1.0] - 2026-11-10
+## [1.1.0] - 2026-11-12
 
-This minor release adds .NET 11 support alongside .NET 10, updates dependencies, and refreshes test and documentation infrastructure.
+This is a minor release adding .NET 11 targets alongside .NET 10, updating dependencies, and refreshing test, automation, and documentation infrastructure.
 
 ### Added
 
-- .NET 11 targets for the Codebelt.Extensions.Carter packages,
-- `SonarAnalyzer.CSharp` 10.35.0.4138 for non-test projects.
+- .NET 11 targets for all Codebelt.Extensions.Carter packages,
+- `SonarAnalyzer.CSharp` 10.36.0.15337 to source project builds.
 
 ### Changed
 
-- Updated `Codebelt.Coverlet.MTP` from 10.1.0 to 10.1.1 and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.2,
-- Updated `Cuemon.Core`, `Cuemon.Extensions.AspNetCore.Text.Json`, `Cuemon.Extensions.AspNetCore.Xml`, and `Cuemon.Extensions.IO` from 10.8.1 to 10.8.2,
-- Moved Linux CI to Ubuntu 26.04, enabled preview SDKs, and split Docker test runners by .NET 10 and .NET 11,
+- Updated `Codebelt.Extensions.AspNetCore.Newtonsoft.Json` and `Codebelt.Extensions.AspNetCore.Text.Yaml` from 10.1.9 to 11.0.0,
+- Updated `Cuemon.Core`, `Cuemon.Extensions.AspNetCore.Text.Json`, `Cuemon.Extensions.AspNetCore.Xml`, and `Cuemon.Extensions.IO` from 10.8.1 to 11.0.0,
+- Updated test dependencies `Codebelt.Extensions.Xunit.App` from 12.0.2 to 13.0.0, `Codebelt.Coverlet.MTP` from 10.1.0 to 11.0.0, `Microsoft.NET.Test.Sdk` from 18.11.0 to 18.12.0, and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.3,
+- Updated `xunit.v3` and `xunit.v3.runner.console` from 4.0.2 to 4.0.3,
+- Moved Linux CI and the WSL test environment to Ubuntu 26.04 and split Docker test environments into .NET 10 and .NET 11 runners,
 - Updated package and contributor guidance for the supported frameworks and test environments,
-- Service-update automation retains planned releases and validates release dates,
-- Fingerprinted documentation assets use immutable caching for successful and 304 responses, no-store for errors, and full responses instead of ranges.
+- Updated service-update automation to preserve planned releases ahead of the latest tag and validate release dates,
+- Pinned and updated the Scorecard workflow actions,
+- Changed fingerprinted documentation asset caching to use immutable caching for successful and 304 responses, no-store for errors, and complete responses instead of ranges.
 
 ## [1.0.9] - 2026-10-17
 
