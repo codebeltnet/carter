@@ -2,6 +2,8 @@
 
 A focused extension layer for Carter with configurable response negotiation primitives and endpoint metadata helpers for ASP.NET Core minimal APIs.
 
+Target frameworks: .NET 10 (`net10.0`) and .NET 11 (`net11.0`).
+
 ## About
 
 **Codebelt.Extensions.Carter** complements Carter by adding reusable negotiation infrastructure and endpoint convention extensions.

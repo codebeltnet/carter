@@ -4,6 +4,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 For more details, please refer to `PackageReleaseNotes.txt` on a per assembly basis in the `.nuget` folder.
 
+## [1.1.0] - 2026-11-12
+
+This is a minor release adding .NET 11 targets alongside .NET 10, updating dependencies, and refreshing test, automation, and documentation infrastructure.
+
+### Added
+
+- .NET 11 targets for all Codebelt.Extensions.Carter packages,
+- `SonarAnalyzer.CSharp` 10.36.0.15337 to source project builds.
+
+### Changed
+
+- Updated `Codebelt.Extensions.AspNetCore.Newtonsoft.Json` and `Codebelt.Extensions.AspNetCore.Text.Yaml` from 10.1.9 to 11.0.0,
+- Updated `Cuemon.Core`, `Cuemon.Extensions.AspNetCore.Text.Json`, `Cuemon.Extensions.AspNetCore.Xml`, and `Cuemon.Extensions.IO` from 10.8.1 to 11.0.0,
+- Updated test dependencies `Codebelt.Extensions.Xunit.App` from 12.0.2 to 13.0.0, `Codebelt.Coverlet.MTP` from 10.1.0 to 11.0.0, `Microsoft.NET.Test.Sdk` from 18.11.0 to 18.12.0, and `Microsoft.Testing.Extensions.HangDump` from 2.5.1 to 2.5.3,
+- Updated `xunit.v3` and `xunit.v3.runner.console` from 4.0.2 to 4.0.3,
+- Moved Linux CI and the WSL test environment to Ubuntu 26.04 and split Docker test environments into .NET 10 and .NET 11 runners,
+- Updated package and contributor guidance for the supported frameworks and test environments,
+- Updated service-update automation to preserve planned releases ahead of the latest tag and validate release dates,
+- Pinned and updated the Scorecard workflow actions,
+- Changed fingerprinted documentation asset caching to use immutable caching for successful and 304 responses, no-store for errors, and complete responses instead of ranges.
+
 ## [1.0.9] - 2026-10-17
 
 This is a patch release updating dependencies, documentation hosting, and repository agent guidance.
@@ -162,6 +183,7 @@ This is the initial stable release of the `Codebelt.Extensions.Carter`, `Codebel
 - `YamlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Text.Yaml namespace that provides a YAML response negotiator for Carter, capable of serializing response models to YAML format using `YamlDotNet`,
 - `XmlResponseNegotiator` class in the Codebelt.Extensions.Carter.AspNetCore.Xml namespace that provides an XML response negotiator for Carter, capable of serializing response models to XML format using `System.Xml.XmlWriter`.
 
+[1.1.0]: https://github.com/codebeltnet/carter/compare/v1.0.9...v1.1.0
 [1.0.9]: https://github.com/codebeltnet/carter/compare/v1.0.8...v1.0.9
 [1.0.8]: https://github.com/codebeltnet/carter/compare/v1.0.7...v1.0.8
 [1.0.7]: https://github.com/codebeltnet/carter/compare/v1.0.6...v1.0.7

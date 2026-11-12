@@ -4,7 +4,7 @@ This document provides guidance for AI agents working in this repository.
 
 ## Project Overview
 
-Codebelt.Extensions.Carter is a suite of .NET libraries providing extensions and integrations for the Carter framework—a lightweight, composable REST API framework for ASP.NET Core. The solution targets .NET 10.0, .NET 9.0, and .NET Standard 2.0. It includes:
+Codebelt.Extensions.Carter is a suite of .NET libraries providing extensions and integrations for the Carter framework—a lightweight, composable REST API framework for ASP.NET Core. The solution targets .NET 10.0 and .NET 11.0. It includes:
 
 - **Codebelt.Extensions.Carter** — Core extensions for Carter endpoint conventions and response handling.
 - **Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json** — Content negotiation using Newtonsoft.Json (JSON.NET).

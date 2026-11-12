@@ -1,4 +1,4 @@
-﻿---
+---
 uid: Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.YamlResponseNegotiator
 summary: *content
 ---
