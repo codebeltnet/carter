@@ -3,6 +3,9 @@
   "examples": [
     {
       "id": "6352b06e7d9ea46088bd7abf",
+      "exampleId": "Codebelt.Extensions.Carter.AspNetCore.Text.Json.JsonResponseNegotiator#1",
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Text.Json.JsonResponseNegotiator",
+      "fenceOrdinal": 1,
       "strategy": "standalone",
       "transports": [
         "native",
@@ -25,6 +28,9 @@
     },
     {
       "id": "83888118c4da05f5423d7ce9",
+      "exampleId": "Codebelt.Extensions.Carter.EndpointConventionBuilderExtensions#1",
+      "uid": "Codebelt.Extensions.Carter.EndpointConventionBuilderExtensions",
+      "fenceOrdinal": 1,
       "strategy": "standalone",
       "transports": [
         "native",
@@ -47,6 +53,9 @@
     },
     {
       "id": "93c4f046477745c9b8272f18",
+      "exampleId": "Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.NewtonsoftJsonNegotiator#1",
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.NewtonsoftJsonNegotiator",
+      "fenceOrdinal": 1,
       "strategy": "standalone",
       "transports": [
         "native",
@@ -69,6 +78,9 @@
     },
     {
       "id": "bf3b685f7384b7944901e7d0",
+      "exampleId": "Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.YamlResponseNegotiator#1",
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.YamlResponseNegotiator",
+      "fenceOrdinal": 1,
       "strategy": "standalone",
       "transports": [
         "native",
@@ -91,6 +103,9 @@
     },
     {
       "id": "f53010d9cc9ec55bc07adac2",
+      "exampleId": "Codebelt.Extensions.Carter.AspNetCore.Xml.XmlResponseNegotiator#1",
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Xml.XmlResponseNegotiator",
+      "fenceOrdinal": 1,
       "strategy": "standalone",
       "transports": [
         "native",
