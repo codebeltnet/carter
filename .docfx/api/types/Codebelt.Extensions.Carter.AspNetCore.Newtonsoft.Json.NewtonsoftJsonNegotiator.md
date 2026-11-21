@@ -1,15 +1,13 @@
 ---
 uid: Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.NewtonsoftJsonNegotiator
-summary: *content
+example: [*content]
 ---
 
 The `NewtonsoftJsonNegotiator` integrates Newtonsoft.Json serialization into the Carter response pipeline. Register it as the response negotiator to have all `HttpResponse.Negotiate()` calls produce JSON output using Newtonsoft.Json's configurable serializer.
 
-[!INCLUDE [availability-modern](../../includes/availability-modern.md)]
-
 ### Example
 
-The following example demonstrates how to register `NewtonsoftJsonNegotiator` with a custom converter and negotiate a response model.
+To inspect the JSON a Carter client would receive, pass the requested media type to the negotiator and serialize a response into a memory stream. The stream makes the response body readable without starting a server.
 
 ```csharp
 using System;
@@ -27,14 +25,16 @@ namespace DocfxExample;
 
 public static class NewtonsoftJsonNegotiatorExample
 {
-    public static async Task DemonstrateAsync()
+    public static async Task Main()
     {
         var options = Options.Create(new NewtonsoftJsonFormatterOptions());
         var negotiator = new NewtonsoftJsonNegotiator(options);
         var acceptHeader = MediaTypeHeaderValue.Parse("application/json");
         if (negotiator.CanHandle(acceptHeader))
         {
+            using var body = new MemoryStream();
             var context = new DefaultHttpContext();
+            context.Response.Body = body;
             context.Request.Headers.Accept = "application/json";
             var model = new { Name = "Newtonsoft", Value = 42 };
             await negotiator.Handle(context.Request, context.Response, model, CancellationToken.None);
@@ -45,3 +45,7 @@ public static class NewtonsoftJsonNegotiatorExample
     }
 }
 ```
+
+<!-- docfx-run-actions:start -->
+<div class="docfx-run-actions" data-example-id="93c4f046477745c9b8272f18"><a href="~/run-actions/93c4f046477745c9b8272f18/native.ps1" data-transport="native">View Native Script</a> · <a href="~/run-actions/93c4f046477745c9b8272f18/docker.ps1" data-transport="docker">View Docker Script</a></div>
+<!-- docfx-run-actions:end -->

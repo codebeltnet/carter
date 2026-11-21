@@ -1,11 +1,9 @@
 ---
 uid: Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.YamlResponseNegotiator
-summary: *content
+example: [*content]
 ---
 
 The `YamlResponseNegotiator` integrates YamlDotNet serialization into the Carter response pipeline. Register it as the response negotiator to have all `HttpResponse.Negotiate()` calls produce YAML output—ideal for tooling, configuration, and DevOps-focused APIs.
-
-[!INCLUDE [availability-modern](../../includes/availability-modern.md)]
 
 ### Example
 
@@ -29,14 +27,16 @@ namespace DocfxExample;
 
 public static class YamlResponseNegotiatorExample
 {
-    public static async Task DemonstrateAsync()
+    public static async Task Main()
     {
         var options = Options.Create(new YamlFormatterOptions());
         var negotiator = new YamlResponseNegotiator(options);
         var acceptHeader = MediaTypeHeaderValue.Parse("application/yaml");
         if (negotiator.CanHandle(acceptHeader))
         {
+            using var body = new MemoryStream();
             var context = new DefaultHttpContext();
+            context.Response.Body = body;
             context.Request.Headers.Accept = "application/yaml";
             var model = new { Name = "YamlDotNet", Value = 42 };
             await negotiator.Handle(context.Request, context.Response, model, CancellationToken.None);
@@ -47,3 +47,7 @@ public static class YamlResponseNegotiatorExample
     }
 }
 ```
+
+<!-- docfx-run-actions:start -->
+<div class="docfx-run-actions" data-example-id="bf3b685f7384b7944901e7d0"><a href="~/run-actions/bf3b685f7384b7944901e7d0/native.ps1" data-transport="native">View Native Script</a> · <a href="~/run-actions/bf3b685f7384b7944901e7d0/docker.ps1" data-transport="docker">View Docker Script</a></div>
+<!-- docfx-run-actions:end -->
