@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "examples": [
+    {
+      "id": "6352b06e7d9ea46088bd7abf",
+      "strategy": "standalone",
+      "transports": [
+        "native",
+        "docker"
+      ],
+      "image": "codebeltnet/csrun:10",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Text.Json@1.1.0"
+        ],
+        "source": "using System;\nusing System.IO;\nusing System.Text;\nusing System.Text.Json.Serialization.Metadata;\nusing System.Threading;\nusing System.Threading.Tasks;\nusing Codebelt.Extensions.Carter.AspNetCore.Text.Json;\nusing Cuemon.Extensions.Text.Json.Formatters;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.Extensions.Options;\nusing Microsoft.Net.Http.Headers;\n\nnamespace DocfxExample;\n\npublic static class JsonResponseNegotiatorExample\n{\n    public static async Task Main()\n    {\n        var formatterOptions = new JsonFormatterOptions();\n        formatterOptions.Settings.TypeInfoResolver = new DefaultJsonTypeInfoResolver();\n        var options = Options.Create(formatterOptions);\n        var negotiator = new JsonResponseNegotiator(options);\n        var acceptHeader = MediaTypeHeaderValue.Parse(\"application/json\");\n        if (negotiator.CanHandle(acceptHeader))\n        {\n            using var body = new MemoryStream();\n            var context = new DefaultHttpContext();\n            context.Response.Body = body;\n            context.Request.Headers.Accept = \"application/json\";\n            var model = new { Name = \"System.Text.Json\", Value = 42 };\n            await negotiator.Handle(context.Request, context.Response, model, CancellationToken.None);\n            context.Response.Body.Position = 0;\n            using var reader = new StreamReader(context.Response.Body, Encoding.UTF8);\n            Console.WriteLine(await reader.ReadToEndAsync());\n        }\n    }\n}"
+      }
+    },
+    {
+      "id": "83888118c4da05f5423d7ce9",
+      "strategy": "standalone",
+      "transports": [
+        "native",
+        "docker"
+      ],
+      "image": "codebeltnet/csrun:10",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter@1.1.0"
+        ],
+        "source": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Threading.Tasks;\nusing Codebelt.Extensions.Carter;\nusing Microsoft.AspNetCore.Builder;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.AspNetCore.Http.Metadata;\nusing Microsoft.AspNetCore.Routing;\nusing Microsoft.AspNetCore.Routing.Patterns;\n\nnamespace DocfxExample;\n\npublic static class ProducesExtensionExample\n{\n    public static void Main()\n    {\n        var endpointBuilder = new RouteEndpointBuilder(\n            context => Task.CompletedTask,\n            RoutePatternFactory.Parse(\"/api/orders\"),\n            0);\n\n        var fakeBuilder = new FakeEndpointConventionBuilder();\n        EndpointConventionBuilderExtensions.Produces<OrderSummary>(fakeBuilder, StatusCodes.Status200OK, \"application/json\");\n        fakeBuilder.Produces(StatusCodes.Status404NotFound);\n\n        foreach (var convention in fakeBuilder.Conventions)\n        {\n            convention(endpointBuilder);\n        }\n\n        foreach (var metadata in endpointBuilder.Metadata.OfType<IProducesResponseTypeMetadata>())\n        {\n            Console.WriteLine(\n                $\"Status: {metadata.StatusCode}, \" +\n                $\"Type: {metadata.Type?.Name ?? \"(none)\"}, \" +\n                $\"ContentTypes: {string.Join(\", \", metadata.ContentTypes)}\");\n        }\n    }\n\n    private sealed class FakeEndpointConventionBuilder : IEndpointConventionBuilder\n    {\n        public List<Action<EndpointBuilder>> Conventions { get; } = [];\n        public void Add(Action<EndpointBuilder> convention) => Conventions.Add(convention);\n    }\n}\n\npublic sealed record OrderSummary(int Id, string Name);"
+      }
+    },
+    {
+      "id": "93c4f046477745c9b8272f18",
+      "strategy": "standalone",
+      "transports": [
+        "native",
+        "docker"
+      ],
+      "image": "codebeltnet/csrun:10",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json@1.1.0"
+        ],
+        "source": "using System;\nusing System.IO;\nusing System.Text;\nusing System.Threading;\nusing System.Threading.Tasks;\nusing Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json;\nusing Codebelt.Extensions.Newtonsoft.Json.Formatters;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.Extensions.Options;\nusing Microsoft.Net.Http.Headers;\n\nnamespace DocfxExample;\n\npublic static class NewtonsoftJsonNegotiatorExample\n{\n    public static async Task Main()\n    {\n        var options = Options.Create(new NewtonsoftJsonFormatterOptions());\n        var negotiator = new NewtonsoftJsonNegotiator(options);\n        var acceptHeader = MediaTypeHeaderValue.Parse(\"application/json\");\n        if (negotiator.CanHandle(acceptHeader))\n        {\n            using var body = new MemoryStream();\n            var context = new DefaultHttpContext();\n            context.Response.Body = body;\n            context.Request.Headers.Accept = \"application/json\";\n            var model = new { Name = \"Newtonsoft\", Value = 42 };\n            await negotiator.Handle(context.Request, context.Response, model, CancellationToken.None);\n            context.Response.Body.Position = 0;\n            using var reader = new StreamReader(context.Response.Body, Encoding.UTF8);\n            Console.WriteLine(await reader.ReadToEndAsync());\n        }\n    }\n}"
+      }
+    },
+    {
+      "id": "bf3b685f7384b7944901e7d0",
+      "strategy": "standalone",
+      "transports": [
+        "native",
+        "docker"
+      ],
+      "image": "codebeltnet/csrun:10",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Text.Yaml@1.1.0"
+        ],
+        "source": "using System;\nusing System.IO;\nusing System.Text;\nusing System.Threading;\nusing System.Threading.Tasks;\nusing Codebelt.Extensions.Carter.AspNetCore.Text.Yaml;\nusing Codebelt.Extensions.YamlDotNet.Formatters;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.Extensions.Options;\nusing Microsoft.Net.Http.Headers;\n\nnamespace DocfxExample;\n\npublic static class YamlResponseNegotiatorExample\n{\n    public static async Task Main()\n    {\n        var options = Options.Create(new YamlFormatterOptions());\n        var negotiator = new YamlResponseNegotiator(options);\n        var acceptHeader = MediaTypeHeaderValue.Parse(\"application/yaml\");\n        if (negotiator.CanHandle(acceptHeader))\n        {\n            using var body = new MemoryStream();\n            var context = new DefaultHttpContext();\n            context.Response.Body = body;\n            context.Request.Headers.Accept = \"application/yaml\";\n            var model = new { Name = \"YamlDotNet\", Value = 42 };\n            await negotiator.Handle(context.Request, context.Response, model, CancellationToken.None);\n            context.Response.Body.Position = 0;\n            using var reader = new StreamReader(context.Response.Body, Encoding.UTF8);\n            Console.WriteLine(await reader.ReadToEndAsync());\n        }\n    }\n}"
+      }
+    },
+    {
+      "id": "f53010d9cc9ec55bc07adac2",
+      "strategy": "standalone",
+      "transports": [
+        "native",
+        "docker"
+      ],
+      "image": "codebeltnet/csrun:10",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Xml@1.1.0"
+        ],
+        "source": "using System;\nusing System.IO;\nusing System.Text;\nusing System.Threading;\nusing System.Threading.Tasks;\nusing Codebelt.Extensions.Carter.AspNetCore.Xml;\nusing Cuemon.Xml.Serialization.Formatters;\nusing Microsoft.AspNetCore.Http;\nusing Microsoft.Extensions.Options;\nusing Microsoft.Net.Http.Headers;\n\nnamespace DocfxExample;\n\npublic static class XmlResponseNegotiatorExample\n{\n    public static async Task Main()\n    {\n        var options = Options.Create(new XmlFormatterOptions());\n        var negotiator = new XmlResponseNegotiator(options);\n        var acceptHeader = MediaTypeHeaderValue.Parse(\"application/xml\");\n        if (negotiator.CanHandle(acceptHeader))\n        {\n            using var body = new MemoryStream();\n            var context = new DefaultHttpContext();\n            context.Response.Body = body;\n            context.Request.Headers.Accept = \"application/xml\";\n            var model = new Report { Name = \"XML\", Value = 42 };\n            await negotiator.Handle(context.Request, context.Response, model, CancellationToken.None);\n            context.Response.Body.Position = 0;\n            using var reader = new StreamReader(context.Response.Body, Encoding.UTF8);\n            Console.WriteLine(await reader.ReadToEndAsync());\n        }\n    }\n}\n\npublic sealed class Report\n{\n    public string Name { get; set; } = string.Empty;\n    public int Value { get; set; }\n}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "examples": [
+    {
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json.NewtonsoftJsonNegotiator",
+      "sourceSha256": "92F45867B2ACED88DFAC3237C8078AB7D5740E2C766F18819B44AF5DD86CF414",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Newtonsoft.Json@1.1.0"
+        ]
+      }
+    },
+    {
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Text.Json.JsonResponseNegotiator",
+      "sourceSha256": "59D8AA9487D73D42F132C0D0E4E7D568A23E924797411166D38B8DA293E90388",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Text.Json@1.1.0"
+        ]
+      }
+    },
+    {
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Text.Yaml.YamlResponseNegotiator",
+      "sourceSha256": "12FDEB7A288A3A5581D52D9E4FFDCC881D112427B7BFE229C2C9C0F47DC79C85",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Text.Yaml@1.1.0"
+        ]
+      }
+    },
+    {
+      "uid": "Codebelt.Extensions.Carter.AspNetCore.Xml.XmlResponseNegotiator",
+      "sourceSha256": "E8B778859FF1625021C115F06D3589CD83F01FDEF3BD0419C1FC4CE74F3FC23B",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter.AspNetCore.Xml@1.1.0"
+        ]
+      }
+    },
+    {
+      "uid": "Codebelt.Extensions.Carter.EndpointConventionBuilderExtensions",
+      "sourceSha256": "17A00BE8109C9F8F2554F1DFBBAABCBFCB7F238601BD5DCA8559A69EC4B2D56E",
+      "manifest": {
+        "schemaVersion": 1,
+        "mode": "console",
+        "framework": "net10.0",
+        "sdk": "Microsoft.NET.Sdk.Web",
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "dependsOn": [
+          "Codebelt.Extensions.Carter@1.1.0"
+        ]
+      }
+    }
+  ]
+}
