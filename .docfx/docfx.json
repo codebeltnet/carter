@@ -80,8 +80,8 @@
     "template": [
       "default",
       "modern",
-      "templates/ms-style",
-      "run-actions-template"
+      "templates/modern",
+      "templates/ms-style"
     ],
     "overwrite": [
       {
