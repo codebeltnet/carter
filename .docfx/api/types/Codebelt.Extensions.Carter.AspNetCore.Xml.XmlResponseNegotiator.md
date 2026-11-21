@@ -5,8 +5,6 @@ example: [*content]
 
 The `XmlResponseNegotiator` integrates System.Xml XML serialization into the Carter response pipeline. Register it as the response negotiator to have all `HttpResponse.Negotiate()` calls produce standards-compliant XML output—suitable for legacy interoperability and enterprise integration scenarios.
 
-### Example
-
 `XmlResponseNegotiator` is constructed with an `IOptions<XmlFormatterOptions>` that controls supported media types and System.Xml serialization settings, including writer encoding. Before serializing a model, the negotiator tests the client's `Accept` header via `CanHandle`; only when it returns `true` is `Handle` called to produce XML output. `Handle` resolves the character encoding from the `Accept-Charset` header (falling back to `XmlFormatterOptions.Settings.Writer.Encoding`), sets the `Content-Type` response header, and streams the serialized XML directly to the response body.
 
 The following example constructs the negotiator with default options, confirms that the `application/xml` media type is accepted, then writes a public model to an in-memory response stream and reads back the serialized output:

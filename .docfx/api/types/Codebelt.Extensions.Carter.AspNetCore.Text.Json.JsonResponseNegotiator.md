@@ -5,8 +5,6 @@ example: [*content]
 
 The `JsonResponseNegotiator` integrates System.Text.Json serialization into the Carter response pipeline. Register it as the response negotiator to have all `HttpResponse.Negotiate()` calls produce JSON output using the modern, high-performance System.Text.Json serializer.
 
-### Example
-
 To inspect the System.Text.Json output for a response model, pass the requested media type to the negotiator and serialize into a memory stream. The explicit type information resolver allows the formatter to serialize the anonymous model even when the host disables reflection-based serialization by default.
 
 ```csharp

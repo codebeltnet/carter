@@ -5,8 +5,6 @@ example: [*content]
 
 The `YamlResponseNegotiator` integrates YamlDotNet serialization into the Carter response pipeline. Register it as the response negotiator to have all `HttpResponse.Negotiate()` calls produce YAML output—ideal for tooling, configuration, and DevOps-focused APIs.
 
-### Example
-
 `YamlResponseNegotiator` is constructed with an `IOptions<YamlFormatterOptions>` that controls supported media types and YamlDotNet serialization settings. Before serializing a model, the negotiator tests the client's `Accept` header via `CanHandle`; only when it returns `true` is `Handle` called to produce YAML output. `Handle` resolves the character encoding from the `Accept-Charset` header (falling back to `YamlFormatterOptions.Encoding`), sets the `Content-Type` response header, and streams the serialized YAML directly to the response body.
 
 The following example constructs the negotiator with default options, confirms that the `application/yaml` media type is accepted, then writes an anonymous object to an in-memory response stream and reads back the serialized output:

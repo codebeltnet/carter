@@ -5,8 +5,6 @@ example: [*content]
 
 The `NewtonsoftJsonNegotiator` integrates Newtonsoft.Json serialization into the Carter response pipeline. Register it as the response negotiator to have all `HttpResponse.Negotiate()` calls produce JSON output using Newtonsoft.Json's configurable serializer.
 
-### Example
-
 To inspect the JSON a Carter client would receive, pass the requested media type to the negotiator and serialize a response into a memory stream. The stream makes the response body readable without starting a server.
 
 ```csharp

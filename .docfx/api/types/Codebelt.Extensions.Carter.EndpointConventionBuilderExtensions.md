@@ -7,8 +7,6 @@ Attach typed response metadata to any Carter or minimal API endpoint by calling 
 
 > **Note:** DocFX does not yet generate complete API metadata for C# 14 extension block members ([docfx#11010](https://github.com/dotnet/docfx/issues/11010)). The extension methods themselves are fully functional; the limitation is cosmetic in generated API docs only.
 
-### Example
-
 `Produces<TResponse>` and `Produces` attach `IProducesResponseTypeMetadata` directly to an endpoint builder. `Produces<TResponse>` records the response body type, HTTP status code, and accepted content types; `Produces` (no type parameter) records a status-only response with no body—useful for `404`, `401`, and similar cases. Both are chainable and are typically called on a `RouteHandlerBuilder` inside a Carter module or minimal API route definition.
 
 The following example constructs an endpoint builder directly, applies both extension members to the convention builder, and reads back the attached metadata to show what each call contributes:
