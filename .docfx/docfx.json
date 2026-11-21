@@ -24,7 +24,8 @@
   "build": {
     "sitemap": {
       "changefreq": "monthly",
-      "baseUrl": "https://carter.codebelt.net/"},
+      "baseUrl": "https://carter.codebelt.net/"
+    },
     "xref": [
       "https://docs.cuemon.net/xrefmap.yml?v=20260120",
       "https://newtonsoft.codebelt.net/xrefmap.yml",
@@ -52,6 +53,11 @@
         "files": [
           "images/**"
         ]
+      },
+      {
+        "files": [
+          "run-actions/**"
+        ]
       }
     ],
     "globalMetadata": {
@@ -74,6 +80,7 @@
     "template": [
       "default",
       "modern",
+      "templates/modern",
       "templates/ms-style"
     ],
     "overwrite": [

@@ -11,7 +11,8 @@ This is a minor release adding .NET 11 targets alongside .NET 10, updating depen
 ### Added
 
 - .NET 11 targets for all Codebelt.Extensions.Carter packages,
-- `SonarAnalyzer.CSharp` 10.36.0.15337 to source project builds.
+- `SonarAnalyzer.CSharp` 10.36.0.15337 to source project builds,
+- DocFX run-actions build script, manifest, and settings for generating native and Docker run scripts for API example pages.
 
 ### Changed
 
@@ -23,7 +24,8 @@ This is a minor release adding .NET 11 targets alongside .NET 10, updating depen
 - Updated package and contributor guidance for the supported frameworks and test environments,
 - Updated service-update automation to preserve planned releases ahead of the latest tag and validate release dates,
 - Pinned and updated the Scorecard workflow actions,
-- Changed fingerprinted documentation asset caching to use immutable caching for successful and 304 responses, no-store for errors, and complete responses instead of ranges.
+- Changed fingerprinted documentation asset caching to use immutable caching for successful and 304 responses, no-store for errors, and complete responses instead of ranges,
+- Updated DocFX type page examples to expose runnable `Main` entry points with public models, removed redundant availability includes, and wired run-actions content and templates into `docfx.json`.
 
 ## [1.0.9] - 2026-10-17
 
